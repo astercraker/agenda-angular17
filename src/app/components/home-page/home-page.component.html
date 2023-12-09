@@ -1,0 +1,53 @@
+<!-- <h1 class="text-3xl font-bold underline">
+    Schedule component syncfusion
+</h1> -->
+<div class="flex">
+    <div class="w-1/6 p-5">
+        <label for="sucursal">Sucursal</label>
+        <nz-select ngModel="lucy" class="w-full">
+            <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+            <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+            <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+        </nz-select>
+        <div class="my-4 flex flex-col">
+            <label for="inicio">Inicio</label>
+            <nz-date-picker (ngModelChange)="onChange($event)"></nz-date-picker>
+        </div>
+        <div class="my-4 flex flex-row">
+            <input nz-input  placeholder="cliente" [(ngModel)]="nameCLient" type="number" />
+            <button nz-button nzType="primary" class="px-2">
+                <span nz-icon nzType="search"></span>
+            </button>
+        </div>
+        <nz-select ngModel="lucy" class="w-full">
+            <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+            <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+            <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+        </nz-select>
+        <div class="my-4 flex flex-row justify-start">
+            <button class="ant-btn flex-1 mr-2 flex flex-col items-end ant-btn-primary ant-btn-icon-only">
+                <span nz-icon nzType="plus" nz class="!inline-flex"></span>
+                Añadir cita
+            </button>
+            <button class="ant-btn flex-1 flex flex-col items-end ant-btn-primary ant-btn-icon-only ant-btn-dangerous">
+                <span nz-icon nzType="logout" nz class="!inline-flex"></span>
+                Salir
+            </button>
+        </div>
+    </div>
+    <ejs-schedule width='100%' height='100vh' [eventSettings]='eventSettings' [selectedDate]="selectedDate" [currentView]="'TimelineDay'">
+        <e-views>
+            <e-view option='TimelineDay'></e-view>
+            <e-view option='Week'></e-view>
+            <e-view option='Month'></e-view>
+            <e-view option='TimelineMonth'></e-view>
+        </e-views>
+        <e-resources>
+            <e-resource field="OwnerId" title="Owner" name="Owners"
+              [dataSource]="ownerDataSource" [allowMultiple]="allowMultipleOwner"
+              textField="OwnerText" idField="Id" colorField="OwnerColor">
+            </e-resource>
+        </e-resources>
+    </ejs-schedule>
+</div>
+
